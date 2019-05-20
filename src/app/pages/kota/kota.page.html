@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Kota/Kabupatan</ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<!-- <ion-searchbar></ion-searchbar> -->
+		<ion-card>
+
+		  <ion-item button *ngFor="let key of keys" [routerLink]="['/kode',key]">
+		    <ion-icon name="pin" slot="start"></ion-icon>
+		    <ion-label>
+		    	<ion-list>
+					{{items[key]}}
+				</ion-list>
+		    </ion-label>
+		  </ion-item>
+		</ion-card>
+</ion-content>

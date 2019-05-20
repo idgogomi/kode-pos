@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Kode POS</ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-searchbar placeholder="Ketik nama daerah" [(ngModel)]="searchTerm" (ionChange)="filterItem()"></ion-searchbar>
+<ion-content>
+<ion-card *ngFor="let item of filterItems">
+	<ion-card-header>
+		<!-- <ion-card-subtitle>Kec. {{item.kecamatan}}</ion-card-subtitle> -->
+	
+	<ion-item>
+	    <ion-icon name="navigate" slot="start"></ion-icon>
+	    <ion-label>Kel. {{item.kelurahan}}</ion-label>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-icon name="mail" slot="start"></ion-icon>
+	    <ion-label>Kode POS. {{item.kodepos}}</ion-label>
+	  </ion-item>
+</ion-card-header>
+</ion-card>
+
+</ion-content>
